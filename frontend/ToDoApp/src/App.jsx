@@ -30,19 +30,20 @@ function App() {
 
   return (
     <>
-      <h1>To-Do App</h1>
-      <button onClick={getTask}>Get Tasks</button>
+      <div className="">
+        <h1>To-Do App</h1>
+        <button onClick={getTask}>Get Tasks</button>
 
-      <ul>    
-        {items.map((item, index) => (
-          <li key={index}>
-            {item.text} - {item.is_done ? "Yes": "No"} 
-          </li>
-        ))}
-      </ul>
+        <ul>
+          {items.map((item, index) => (
+            <li key={index}>
+              {item.text} - {item.is_done ? "Yes" : "No"}
+            </li>
+          ))}
+        </ul>
 
-      <button onClick={addTask}>Add Tasks</button>
-
+        {/* <button onClick={addTask}>Add Tasks</button> */}
+      </div>
     </>
   );
 }

@@ -18,10 +18,16 @@ class Item(BaseModel):
 
 items = []
 
+@app.get("/")
+def root():
+    return {"Hello": "World"}
+
+# GET Request
 @app.get("/items")
 def get_items():
     return items
 
+# POST Request
 @app.post("/items")
 def add_item(item: Item):
     items.append(item)
