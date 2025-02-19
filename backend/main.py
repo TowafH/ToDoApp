@@ -18,16 +18,14 @@ class Item(BaseModel):
 
 items = []
 
-@app.get("/")
-def root():
-    return {"Hello": "World"}
-
 # GET Request
+# curl -X 'GET' 'http://localhost:8000/items'
 @app.get("/items")
 def get_items():
     return items
 
 # POST Request
+# curl -X 'POST' 'http://localhost:8000/items' -H 'Content-Type: application/json' -d '{"text": "Sample task", "is_done": false}'
 @app.post("/items")
 def add_item(item: Item):
     items.append(item)
